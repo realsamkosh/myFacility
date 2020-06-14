@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\myFacility.Infrastructure\myFacility.Infrastructure.csproj" />
+    <ProjectReference Include="..\myFacility.Models\myFacility.Models.csproj" />
+    <ProjectReference Include="..\myFacility.Utilities\myFacility.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>
