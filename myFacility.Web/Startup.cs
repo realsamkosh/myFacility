@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using myFacility.Infrastructure;
 using myFacility.Models.Domains.Account;
+using myFacility.Services;
 using myFacility.Utilities.AuthenticationUtility;
 
 namespace myFacility.Web
@@ -54,8 +50,16 @@ namespace myFacility.Web
            .UseSqlServerStorage(Configuration.GetConnectionString("myFacilityDbConnection")));
 
             services.AddControllersWithViews();
+
+            // .NET Native DI Abstraction
+            RegisterServices(services);
         }
 
+        private void RegisterServices(IServiceCollection services)
+        {
+            // Adding dependencies from another layers (isolated from Presentation)
+            NativeInjectorBootStrapper.RegisterServices(services);
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

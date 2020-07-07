@@ -18,9 +18,9 @@ namespace myFacility.Models.Domains.Account
         public DateTime CreatedDate { get; set; }
         public string CreatedBy { get; set; }
         public string UserCategory { get; set; }
-        public bool IsPrivacyPolicyAgreed { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string MiddleName { get; set; }
+        //public bool IsPrivacyPolicyAgreed { get; set; }
+        //public string FirstName { get; set; }
+        //public string LastName { get; set; }
+        //public string MiddleName { get; set; }
     }
 }

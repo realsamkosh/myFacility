@@ -42,7 +42,7 @@ namespace myFacility.Services.Handler
             UserFullnameViewModel user = new UserFullnameViewModel();
             var fetchdata = await _context.Users.FirstOrDefaultAsync(x => x.Id == _authUser.UserId);
             user.username = fetchdata.UserName;
-            user.fullname = fetchdata.LastName + "," + fetchdata.FirstName + "  " + fetchdata.MiddleName;
+            //user.fullname = fetchdata.LastName + "," + fetchdata.FirstName + "  " + fetchdata.MiddleName;
             user.email = fetchdata.Email;
             user.datejoined = fetchdata.CreatedDate.ToString("MMM dd, yyyy");
             switch (fetchdata.UserCategory)

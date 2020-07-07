@@ -1,4 +1,8 @@
-﻿
+﻿@model LoginDTO
+@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@inject SignInManager<BtUser> SignInManager
 @{
     ViewData["Title"] = "Login";
     Layout = "~/Views/Shared/_Secure.cshtml";
@@ -19,7 +23,7 @@
                         </div>
                         <div class="card-content">
                             <div class="card-body">
-                                <div class="d-flex flex-md-row flex-column justify-content-around">
+                                @*<div class="d-flex flex-md-row flex-column justify-content-around">
                                     <a href="#" class="btn btn-social btn-google btn-block font-small-3 mr-md-1 mb-md-0 mb-1">
                                         <i class="bx bxl-google font-medium-3"></i><span class="pl-50 d-block text-center">Google</span>
                                     </a>
@@ -34,15 +38,15 @@
                                             email
                                         </small>
                                     </div>
-                                </div>
-                                <form action="index.html">
+                                </div>*@
+                                <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
                                     <div class="form-group mb-50">
                                         <label class="text-bold-600" for="exampleInputEmail1">Email address</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
+                                        <input type="text" class="form-control" asp-for="username" id="exampleInputEmail1" placeholder="Username or Email address" autocomplete="off" autofocus>
                                     </div>
                                     <div class="form-group">
                                         <label class="text-bold-600" for="exampleInputPassword1">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                        <input type="password" class="form-control" asp-for="password" id="exampleInputPassword1" placeholder="Password" autocomplete="off">
                                     </div>
                                     <div class="form-group d-flex flex-md-row flex-column justify-content-between align-items-center">
                                         <div class="text-left">
@@ -61,9 +65,10 @@
                                     <button type="submit" class="btn btn-primary glow w-100 position-relative">Login<i id="icon-arrow" class="bx bx-right-arrow-alt"></i></button>
                                 </form>
                                 <hr>
-                                <div class="text-center"><small class="mr-25">Don't have an account?</small>
-                                                         <a asp-controller="Account" asp-action="Register"><small>Sign up</small></a>
-                               </div>
+                                <div class="text-center">
+                                    <small class="mr-25">Don't have an account?</small>
+                                    <a asp-controller="Account" asp-action="Register"><small>Sign up</small></a>
+                                </div>
                             </div>
                         </div>
                     </div>

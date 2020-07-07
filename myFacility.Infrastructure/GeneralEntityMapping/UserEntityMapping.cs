@@ -99,25 +99,25 @@ namespace myFacility.Infrastructure.EntityBuilder
                .HasColumnName("user_category")
                .HasMaxLength(1);
 
-            entity.Property(e => e.IsPrivacyPolicyAgreed)
-               .IsRequired()
-               .HasColumnName("is_privacy_policy_agreed");
+            //entity.Property(e => e.IsPrivacyPolicyAgreed)
+            //   .IsRequired()
+            //   .HasColumnName("is_privacy_policy_agreed");
 
             entity.Property(e => e.Token).HasColumnName("token");
 
             entity.Property(e => e.UserName).HasMaxLength(256);
 
-            entity.Property(e => e.FirstName)
-               .HasColumnName("first_name")
-               .HasMaxLength(128);
+            //entity.Property(e => e.FirstName)
+            //   .HasColumnName("first_name")
+            //   .HasMaxLength(128);
 
-            entity.Property(e => e.LastName)
-               .HasColumnName("last_name")
-               .HasMaxLength(128);
+            //entity.Property(e => e.LastName)
+            //   .HasColumnName("last_name")
+            //   .HasMaxLength(128);
 
-            entity.Property(e => e.MiddleName)
-               .HasColumnName("middle_name")
-               .HasMaxLength(128);
+            //entity.Property(e => e.MiddleName)
+            //   .HasColumnName("middle_name")
+            //   .HasMaxLength(128);
         }
     }
     public class UserPermissionMapping

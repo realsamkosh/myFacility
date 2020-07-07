@@ -54,13 +54,13 @@ namespace myFacility.Services.Handler
                         TwoFactorEnabled = false,
                         ForcePwdChange = false,
                         UserCategory = "A",
-                        FirstName = "Admin",
-                        LastName = "Global",
-                        MiddleName = "",
+                        //FirstName = "Admin",
+                        //LastName = "Global",
+                        //MiddleName = "",
                         PwdExpiryDate = DateTime.Now.AddYears(1000),
                         LockoutEnabled = false,
                         PhoneNumber = "NIL",
-                        IsPrivacyPolicyAgreed = false
+                        //IsPrivacyPolicyAgreed = false
                     };
                     await _userManager.CreateAsync(testUser, "P@ssw0rd");
 
