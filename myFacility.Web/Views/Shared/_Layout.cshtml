@@ -3,13 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - myFacility.Web</title>
+    <title>@ViewData["Title"] - myFacility</title>
     <!-- css -->
     <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
     <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/custom.css" rel="stylesheet" />
+    <link href="~/css/fontawesome/css/fontawesome.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
     <!--Navbar Start-->
     <nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark">
         <div class="container">
@@ -23,12 +30,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mx-auto navbar-center" id="mySidenav">
-                    
                 </ul>
                 <ul class="navbar-nav navbar-center">
-                    <li class="nav-item">
-                        <a asp-controller="Account" asp-action="Login"class="nav-link" >Login</a>
-                    
+                    <li class="@((ViewBag.Title == "Vendor Registration") ? "nav-item active" : "nav-item")">
+                        <a asp-controller="vendor" asp-action="registration" class="nav-link">New Vendor Registration</a>
+                    </li>
+                    <li class="@((ViewBag.Title == "Login") ? "nav-item active" : "nav-item")">
+                        <a asp-controller="account" asp-action="login" class="nav-link">Login</a>
                     </li>
                     <li class="nav-item">
                         <a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
@@ -54,6 +62,7 @@
     <script src="~/js/unicons.js"></script>
     <!-- Main Js -->
     <script src="~/js/app.js"></script>
+    <script src="~/css/fontawesome/js/fontawesome.js"></script>
     @*@RenderSection("Scripts", required: false)*@
 </body>
 </html>

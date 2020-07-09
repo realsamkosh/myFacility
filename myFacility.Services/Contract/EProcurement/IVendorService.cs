@@ -6,5 +6,6 @@ namespace myFacility.Services.Contract.EProcurement
 {
     public interface IVendorService
     {
+        //Task<>
     }
 }
